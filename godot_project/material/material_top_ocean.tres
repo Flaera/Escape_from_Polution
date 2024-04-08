@@ -1,0 +1,16 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+flags_transparent = true
+albedo_color = Color( 0.74902, 0.905882, 0.894118, 0.290196 )
+roughness = 0.16
+emission_enabled = true
+emission = Color( 0.156863, 0.823529, 0.929412, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+rim_enabled = true
+rim = 1.0
+rim_tint = 0.5
+transmission_enabled = true
+transmission = Color( 0, 0, 0, 1 )

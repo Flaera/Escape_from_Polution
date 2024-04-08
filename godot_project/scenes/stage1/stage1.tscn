@@ -1,0 +1,752 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scenes/fish/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/obstacle/obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ground_spine/spine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://material/material_bg.tres" type="Material" id=4]
+[ext_resource path="res://material/material_ground.tres" type="Material" id=5]
+[ext_resource path="res://material/material_top_ocean.tres" type="Material" id=6]
+[ext_resource path="res://assets/textures/ocean.png" type="Texture" id=7]
+[ext_resource path="res://material/material_transparent_full.tres" type="Material" id=8]
+[ext_resource path="res://scripts/stage1/stage1.gd" type="Script" id=9]
+
+[sub_resource type="PanoramaSky" id=11]
+panorama = ExtResource( 7 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 3
+background_sky = SubResource( 11 )
+background_color = Color( 0.0509804, 0.376471, 0.498039, 1 )
+ambient_light_color = Color( 0.0470588, 0.105882, 0.74902, 1 )
+glow_enabled = true
+glow_strength = 1.72
+
+[sub_resource type="CubeMesh" id=9]
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="QuadMesh" id=1]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=12]
+
+[sub_resource type="ConcavePolygonShape" id=13]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="stage1" type="Spatial"]
+script = ExtResource( 9 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+
+[node name="Camera" type="Camera" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.6218, 0 )
+light_color = Color( 0.858824, 0.85098, 0.478431, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.129412, 0.129412, 0.0980392, 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="top" type="MeshInstance" parent="."]
+transform = Transform( 180, 0, 0, 0, 20.734, 0, 0, 0, 1, 102.187, 34.243, -0.439774 )
+use_in_baked_light = true
+mesh = SubResource( 9 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="top"]
+
+[node name="CollisionShape" type="CollisionShape" parent="top/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="BG" type="MeshInstance" parent="."]
+transform = Transform( 14.959, 0, 0, 0, 30, 0, 0, 0, 1, 19.3327, 0, -2.84359 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="BG2" type="MeshInstance" parent="."]
+transform = Transform( 11.162, 0, 0, 0, 30, 0, 0, 0, 1, 38.7499, 0, -2.84359 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 8.159, 0, 0, 0, 6.578, 0, 0, 0, 1, 19.3384, 11.3449, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 6.159, 0, 0, 0, 7.03, 0, 0, 0, 1, 38.5662, 12.7825, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="BG3" type="MeshInstance" parent="."]
+transform = Transform( 14.959, 0, 0, 0, 30, 0, 0, 0, 1, 113.826, 0, -2.84359 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="BG4" type="MeshInstance" parent="."]
+transform = Transform( 11.162, 0, 0, 0, 30, 0, 0, 0, 1, 131.46, 0, -2.84359 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 8.159, 0, 0, 0, 6.578, 0, 0, 0, 1, 113.832, 12.6767, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="BG5" type="MeshInstance" parent="."]
+transform = Transform( 14.959, 0, 0, 0, 30, 0, 0, 0, 1, 177.132, -8.55482, -2.84359 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 8.159, 0, 0, 0, 10.989, 0, 0, 0, 1, 177.138, 8.11411, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 6.159, 0, 0, 0, 7.03, 0, 0, 0, 1, 131.276, 12.7825, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 14.593, 0, 0, 0, 1, -3.96343, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = ExtResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance6/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="obstacle" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54718, 0, -1.33124 )
+
+[node name="obstacle2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3056, -3.85349, -1.33124 )
+
+[node name="obstacle3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.1131, -0.746743, -1.33124 )
+
+[node name="obstacle4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2234, -0.746743, -1.33124 )
+
+[node name="obstacle5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.6219, 1.51808, -1.33124 )
+
+[node name="obstacle6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104.246, -5.08284, -1.33124 )
+
+[node name="obstacle7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 119.16, -5.08284, -1.33124 )
+
+[node name="obstacle8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 141.071, -1.41567, -1.33124 )
+
+[node name="obstacle9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 155.496, 0.295684, -1.33124 )
+
+[node name="obstacle10" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 163.218, -6.06076, -1.33124 )
+
+[node name="obstacle11" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 189.234, -3.3715, -1.33124 )
+
+[node name="obstacle12" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 198.524, -0.682229, -1.33124 )
+
+[node name="obstacle13" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, -0.000296706, 0, 0.000296706, 1, 0, 0, 0, 1, 214.17, 0.295686, -1.33124 )
+
+[node name="spine" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.43681, -5.04847, 0 )
+
+[node name="spine2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4.16621, -5.04847, 0 )
+
+[node name="spine3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 2.91641, -5.04421, 0 )
+
+[node name="spine4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 1.66667, -5.05272, 0 )
+
+[node name="spine5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.416877, -5.04847, 0 )
+
+[node name="spine6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.853729, -5.04847, 0 )
+
+[node name="spine7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -2.10352, -5.04421, 0 )
+
+[node name="spine8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -3.35327, -5.05272, 0 )
+
+[node name="spine9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.5914, -5.04847, 0 )
+
+[node name="spine10" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.86201, -5.04847, 0 )
+
+[node name="spine11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -7.1118, -5.04421, 0 )
+
+[node name="spine12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -8.36155, -5.05272, 0 )
+
+[node name="spine13" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -9.61134, -5.04847, 0 )
+
+[node name="spine14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -10.8819, -5.04847, 0 )
+
+[node name="spine15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -12.1317, -5.04421, 0 )
+
+[node name="spine16" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -13.3815, -5.05272, 0 )
+
+[node name="spine17" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -14.5639, -5.04847, 0 )
+
+[node name="spine18" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -15.8345, -5.04847, 0 )
+
+[node name="spine19" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -17.0842, -5.04421, 0 )
+
+[node name="spine20" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -18.334, -5.05272, 0 )
+
+[node name="spine21" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -19.5838, -5.04847, 0 )
+
+[node name="spine22" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -20.8544, -5.04847, 0 )
+
+[node name="spine23" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -22.1042, -5.04421, 0 )
+
+[node name="spine24" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, -23.3539, -5.05272, 0 )
+
+[node name="spine25" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 18.4203, 1.74755, 0 )
+
+[node name="spine41" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 29.7248, -4.40049, 0 )
+
+[node name="spine42" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 30.9809, -4.40049, 0 )
+
+[node name="spine43" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 32.2206, -4.40049, 0 )
+
+[node name="spine44" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 33.3444, -4.40049, 0 )
+
+[node name="spine45" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 34.3444, -4.40049, 0 )
+
+[node name="spine46" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 38.314, -6.96376, 0 )
+
+[node name="spine47" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.5701, -6.96376, 0 )
+
+[node name="spine48" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 40.8098, -6.96376, 0 )
+
+[node name="spine56" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 51.0076, 4.41847, 0 )
+
+[node name="spine57" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 52.2636, 4.41847, 0 )
+
+[node name="spine58" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 53.5034, 4.41847, 0 )
+
+[node name="spine59" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 54.7317, 4.41847, 0 )
+
+[node name="spine60" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 55.9877, 4.41847, 0 )
+
+[node name="spine61" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 57.2275, 4.41847, 0 )
+
+[node name="spine62" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 58.3121, 5.25771, 0 )
+
+[node name="spine63" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 59.5681, 5.25771, 0 )
+
+[node name="spine64" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 60.8079, 5.25771, 0 )
+
+[node name="spine65" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 61.9313, 5.25771, 0 )
+
+[node name="spine66" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 63.1874, 5.25771, 0 )
+
+[node name="spine67" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 64.4271, 4.17565, 0 )
+
+[node name="spine68" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 65.4259, 3.09358, 0 )
+
+[node name="spine69" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 66.6445, 2.24342, 0 )
+
+[node name="spine70" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 67.7214, 1.50662, 0 )
+
+[node name="spine71" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 68.7982, 0.883173, 0 )
+
+[node name="spine72" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 69.7982, -0.116827, 0 )
+
+[node name="spine73" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 71.0451, -0.85363, 0 )
+
+[node name="spine74" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 75.0404, -3.01776, 0 )
+
+[node name="spine75" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 76.289, -3.01776, 0 )
+
+[node name="spine76" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 77.4582, -3.01776, 0 )
+
+[node name="spine77" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 78.5824, -3.01776, 0 )
+
+[node name="spine78" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 79.5824, -3.01776, 0 )
+
+[node name="spine79" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 80.6167, -3.01776, 0 )
+
+[node name="spine80" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 81.9209, -3.01776, 0 )
+
+[node name="spine81" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 83.1007, -3.01776, 0 )
+
+[node name="spine82" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 84.4498, -3.01776, 0 )
+
+[node name="spine83" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 85.4498, -3.01776, 0 )
+
+[node name="spine84" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 103.494, 1.80789, 0 )
+
+[node name="spine85" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 104.648, 1.80789, 0 )
+
+[node name="spine98" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 106.385, -3.24273, 0 )
+
+[node name="spine99" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 107.539, -3.24273, 0 )
+
+[node name="spine100" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 108.812, -3.24273, 0 )
+
+[node name="spine101" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 109.966, -3.24273, 0 )
+
+[node name="spine102" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 111.166, -3.24273, 0 )
+
+[node name="spine103" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 112.32, -3.24273, 0 )
+
+[node name="spine104" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 113.594, -3.24273, 0 )
+
+[node name="spine105" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 114.748, -3.24273, 0 )
+
+[node name="spine106" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 116.021, -3.24273, 0 )
+
+[node name="spine107" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 117.175, -3.24273, 0 )
+
+[node name="spine108" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.228, -1.17325, 0 )
+
+[node name="spine109" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 122.382, -1.17325, 0 )
+
+[node name="spine110" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 123.655, -1.17325, 0 )
+
+[node name="spine111" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 124.809, -1.17325, 0 )
+
+[node name="spine112" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 126.01, -1.17325, 0 )
+
+[node name="spine113" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 127.164, -1.17325, 0 )
+
+[node name="spine114" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 128.437, -1.17325, 0 )
+
+[node name="spine115" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 129.591, -0.0799358, 0 )
+
+[node name="spine116" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 130.864, -0.0799358, 0 )
+
+[node name="spine117" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 132.018, -0.0799358, 0 )
+
+[node name="spine135" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 6.18172e-08, 0.707107, -8.74228e-08, -1, 0, 0.707107, -6.18172e-08, 0.707107, 126.111, 4.70078, 0 )
+
+[node name="spine136" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 6.18172e-08, 0.707107, -8.74228e-08, -1, 0, 0.707107, -6.18172e-08, 0.707107, 127.384, 4.70078, 0 )
+
+[node name="spine137" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 6.18172e-08, 0.707107, -8.74228e-08, -1, 0, 0.707107, -6.18172e-08, 0.707107, 128.538, 4.70078, 0 )
+
+[node name="spine118" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 133.162, -0.0799358, 0 )
+
+[node name="spine119" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 134.435, -0.0799358, 0 )
+
+[node name="spine120" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 135.589, -0.0799358, 0 )
+
+[node name="spine121" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 136.804, -0.0799358, 0 )
+
+[node name="spine122" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 137.972, -0.0799358, 0 )
+
+[node name="spine123" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 139.095, -0.0799358, 0 )
+
+[node name="spine124" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 143.128, 1.44056, 0 )
+
+[node name="spine125" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 144.128, 1.44056, 0 )
+
+[node name="spine126" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 145.317, 1.44056, 0 )
+
+[node name="spine128" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 146.474, 1.44056, 0 )
+
+[node name="spine129" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 147.598, 1.44056, 0 )
+
+[node name="spine130" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 148.598, 1.44056, 0 )
+
+[node name="spine131" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 149.854, 1.44056, 0 )
+
+[node name="spine132" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 150.912, 1.44056, 0 )
+
+[node name="spine133" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 152.21, 1.44056, 0 )
+
+[node name="spine134" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 153.474, 1.44056, 0 )
+
+[node name="spine138" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 157.756, -0.414834, 0 )
+
+[node name="spine139" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 158.969, -0.414834, 0 )
+
+[node name="spine140" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 159.969, -0.414834, 0 )
+
+[node name="spine141" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 161.111, -0.414834, 0 )
+
+[node name="spine142" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 162.395, 0.941029, 0 )
+
+[node name="spine143" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 163.395, 0.941029, 0 )
+
+[node name="spine144" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 164.395, 0.941029, 0 )
+
+[node name="spine145" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 165.395, -8.05897, 0 )
+
+[node name="spine146" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 166.395, -8.05897, 0 )
+
+[node name="spine147" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 167.395, -8.05897, 0 )
+
+[node name="spine148" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 168.608, -8.05897, 0 )
+
+[node name="spine149" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 169.821, -8.05897, 0 )
+
+[node name="spine150" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 171.091, -8.05897, 0 )
+
+[node name="spine151" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 172.248, -8.05897, 0 )
+
+[node name="spine152" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 173.482, -8.05897, 0 )
+
+[node name="spine153" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 174.831, -8.05897, 0 )
+
+[node name="spine154" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 176.001, -8.05897, 0 )
+
+[node name="spine155" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 177.248, -8.05897, 0 )
+
+[node name="spine156" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 178.523, -8.05897, 0 )
+
+[node name="spine157" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 179.713, -8.05897, 0 )
+
+[node name="spine158" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 180.713, -8.05897, 0 )
+
+[node name="spine159" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 181.989, -8.05897, 0 )
+
+[node name="spine160" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 183.235, -8.05897, 0 )
+
+[node name="spine161" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 184.596, -8.05897, 0 )
+
+[node name="spine162" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 185.871, -8.05897, 0 )
+
+[node name="spine163" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 187.118, -8.05897, 0 )
+
+[node name="spine164" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 191.435, -1.26855, 0 )
+
+[node name="spine165" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 192.424, -1.17861, 0 )
+
+[node name="spine166" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 193.424, -1.17861, 0 )
+
+[node name="spine167" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 194.424, -1.17861, 0 )
+
+[node name="spine168" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 195.369, -1.17861, 0 )
+
+[node name="spine169" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 196.369, -1.17861, 0 )
+
+[node name="spine170" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 200.369, 1.82139, 0 )
+
+[node name="spine171" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 201.369, 0.821393, 0 )
+
+[node name="spine172" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 202.593, -0.0780014, 0 )
+
+[node name="spine173" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 203.583, -1.02236, 0 )
+
+[node name="spine174" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 204.583, -2.02237, 0 )
+
+[node name="spine175" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 205.583, -2.02237, 0 )
+
+[node name="spine176" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 206.583, -2.02237, 0 )
+
+[node name="spine177" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 207.932, -1.93243, 0 )
+
+[node name="spine178" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 208.932, -1.93243, 0 )
+
+[node name="spine179" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 210.146, -1.84249, 0 )
+
+[node name="spine180" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 211.146, -1.84249, 0 )
+
+[node name="spine181" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 212.146, -1.84249, 0 )
+
+[node name="spine86" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 102.025, 1.23091, 0 )
+
+[node name="spine87" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 101.025, 0.498375, 0 )
+
+[node name="spine88" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 100.025, -0.581145, 0 )
+
+[node name="spine89" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 98.9234, -1.23657, 0 )
+
+[node name="spine90" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 97.8743, -0.54259, 0 )
+
+[node name="spine91" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 96.6679, 0.189941, 0 )
+
+[node name="spine92" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 95.6679, 1.23091, 0 )
+
+[node name="spine93" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 94.3566, 1.23091, 0 )
+
+[node name="spine94" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 93.2026, 0.0742784, 0 )
+
+[node name="spine95" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 92.1536, -0.504036, 0 )
+
+[node name="spine96" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 91.1536, -0.928133, 0 )
+
+[node name="spine97" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 89.6548, -1.58356, 0 )
+
+[node name="spine49" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 41.9336, -6.30834, 0 )
+
+[node name="spine50" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 42.9336, -5.65292, 0 )
+
+[node name="spine51" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 43.8589, -4.88183, 0 )
+
+[node name="spine52" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 44.8614, -4.03364, 0 )
+
+[node name="spine53" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 45.7481, -3.26256, 0 )
+
+[node name="spine54" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 46.7505, -2.45292, 0 )
+
+[node name="spine55" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 38.0951, 0.547081, 0 )
+
+[node name="spine127" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 6.18172e-08, 0.707107, -8.74228e-08, -1, 0, 0.707107, -6.18172e-08, 0.707107, 44.0747, 4.69082, 0 )
+
+[node name="spine26" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 17.1497, 1.74755, 0 )
+
+[node name="spine27" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 15.8999, 1.75181, 0 )
+
+[node name="spine28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 14.6502, 1.7433, 0 )
+
+[node name="spine29" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 13.4004, 1.74755, 0 )
+
+[node name="spine30" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 12.1298, 1.74755, 0 )
+
+[node name="spine31" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 10.88, 1.75181, 0 )
+
+[node name="spine32" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 9.63025, 1.7433, 0 )
+
+[node name="spine33" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 28.5536, -3.57786, 0 )
+
+[node name="spine34" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 27.283, -2.81762, 0 )
+
+[node name="spine35" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 26.0332, -2.31755, 0 )
+
+[node name="spine36" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 24.7835, -1.69804, 0 )
+
+[node name="spine37" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 23.5337, -0.801323, 0 )
+
+[node name="spine38" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.2631, -0.272459, 0 )
+
+[node name="spine39" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 21.0133, 0.657307, 0 )
+
+[node name="spine40" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 19.7635, 1.30988, 0 )
