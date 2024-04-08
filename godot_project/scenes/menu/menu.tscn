@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://theme/only_font.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/menu/menu.gd" type="Script" id=2]
@@ -12,6 +12,18 @@ font_data = ExtResource( 3 )
 [sub_resource type="StreamTexture" id=2]
 flags = 4
 load_path = "res://.import/controls.png-1e9666d93bac5faaac55a67f51dd99d1.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/logo_flaera_alpha.png-7188150d9f250e381f6599bbe2292757.stex"
+
+[sub_resource type="DynamicFont" id=5]
+size = 26
+font_data = ExtResource( 3 )
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/eEZhEW.png-c4f9f79ec918374ccd7c0e1d870d5a32.stex"
 
 [node name="menu" type="Control"]
 anchor_right = 1.0
@@ -44,9 +56,11 @@ margin_left = -380.0
 margin_top = -429.0
 margin_right = 380.0
 margin_bottom = -34.0
+alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
-margin_right = 370.0
+margin_left = 8.0
+margin_right = 378.0
 margin_bottom = 395.0
 rect_min_size = Vector2( 370, 0 )
 color = Color( 0.160784, 0.160784, 0.160784, 0.172549 )
@@ -71,8 +85,8 @@ theme = ExtResource( 4 )
 text = " quit "
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
-margin_left = 374.0
-margin_right = 744.0
+margin_left = 382.0
+margin_right = 752.0
 margin_bottom = 395.0
 rect_min_size = Vector2( 370, 0 )
 color = Color( 0.160784, 0.160784, 0.160784, 0.172549 )
@@ -96,6 +110,37 @@ theme = ExtResource( 1 )
 text = "Controls"
 align = 1
 valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = SubResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_left = 104.0
+margin_top = 21.0
+margin_right = 446.0
+margin_bottom = 78.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
+text = "@flaeralds
+rafael2mont@gmail.com"
+valign = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -120.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 120, 100 )
+texture = SubResource( 4 )
+expand = true
 
 [connection signal="pressed" from="HBoxContainer/ColorRect/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/ColorRect/quit" to="." method="_on_quit_pressed"]

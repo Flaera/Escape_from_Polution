@@ -1,12 +1,10 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var is_finished: bool = false
+var in_finished: bool = false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Camera").current = true
 
@@ -18,4 +16,5 @@ func camera_follow_player():
 
 
 func _physics_process(_delta):
-	camera_follow_player()
+		camera_follow_player()
+
