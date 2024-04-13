@@ -188,6 +188,8 @@ height = 0.712967
 [node name="player" type="KinematicBody"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 collision_mask = 3
+axis_lock_motion_z = true
+move_lock_z = true
 script = ExtResource( 1 )
 
 [node name="Armature_fish" type="Skeleton" parent="."]

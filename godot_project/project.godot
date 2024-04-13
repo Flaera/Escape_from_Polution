@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Escape from Polution"
+config/name="Escape from Pollution"
 run/main_scene="res://scenes/menu/menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Captura de tela de 2024-04-12 22-44-47.png"
+config/windows_native_icon="res://Captura de tela de 2024-04-12 22-44-47.ico"
 
 [gui]
 

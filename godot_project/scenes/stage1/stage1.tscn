@@ -72,7 +72,7 @@ environment = SubResource( 3 )
 [node name="end_line" type="MeshInstance" parent="."]
 transform = Transform( -40, -1.08572e-07, -1.50971e-07, 0, 39.9935, -0.0179759, 6.03983e-06, -0.719038, -0.999838, 245.583, 6.35787, 0 )
 mesh = SubResource( 14 )
-skeleton = NodePath("../barril_oil11")
+skeleton = NodePath("")
 material/0 = ExtResource( 6 )
 
 [node name="Area_end_line" type="Area" parent="end_line"]
@@ -791,34 +791,28 @@ transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.
 transform = Transform( 0.707091, -0.00680673, 0.707091, 0.00481309, 0.999977, 0.00481309, -0.707107, 0, 0.707107, 19.7635, 1.30988, 0 )
 
 [node name="barril_oil" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.24624e-08, 0.237347, 0.971425, 1.03747e-08, 0.971425, -0.237347, -1, 1.53953e-15, -4.37114e-08, 4.56339, 18.8979, 0 )
+transform = Transform( -4.21043e-08, -0.268668, 0.963233, -1.17438e-08, 0.963233, 0.268668, -1, 0, -4.37114e-08, 3.54345, 16.3307, 0 )
 
 [node name="barril_oil2" parent="." instance=ExtResource( 10 )]
-transform = Transform( -3.43254e-08, -0.619149, 0.785274, -2.70639e-08, 0.785274, 0.619149, -1, 0, -4.37114e-08, 29.4352, 5.73372, 0 )
+transform = Transform( -4.35419e-08, 0.0879903, 0.996121, 3.84618e-09, 0.996121, -0.0879903, -1, 0, -4.37114e-08, 29.8883, 16.947, 0 )
 
 [node name="barril_oil3" parent="." instance=ExtResource( 10 )]
-transform = Transform( -6.45567e-09, -0.989033, 0.147688, -4.3232e-08, 0.147688, 0.989033, -1, 0, -4.37114e-08, 30.4446, 11.6825, 0 )
+transform = Transform( -4.3428e-08, 0.113689, 0.993516, 4.9695e-09, 0.993516, -0.113689, -1, 0, -4.37114e-08, 28.9639, 12.3251, 0 )
 
 [node name="barril_oil4" parent="." instance=ExtResource( 10 )]
-transform = Transform( -3.462e-08, 0.610505, 0.792013, 2.6686e-08, 0.792013, -0.610505, -1, 0, -4.37114e-08, 49.5756, 16.1064, 0 )
+transform = Transform( -4.3428e-08, 0.113689, 0.993516, 4.9695e-09, 0.993516, -0.113689, -1, 0, -4.37114e-08, 50.2246, 15.7144, 0 )
 
 [node name="barril_oil5" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.23708e-08, 0.245764, 0.96933, 1.07427e-08, 0.96933, -0.245764, -1, 0, -4.37114e-08, 63.1374, 13.9401, 0 )
+transform = Transform( -1.37359e-08, -0.949343, 0.314241, -4.14971e-08, 0.314241, 0.949343, -1, 0, -4.37114e-08, 73.9504, 17.7173, 0 )
 
 [node name="barril_oil6" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.04935e-08, -0.37658, 0.926384, -1.64608e-08, 0.926384, 0.37658, -1, 0, -4.37114e-08, 81.2726, 13.6725, 0 )
+transform = Transform( -3.5198e-08, 0.592955, 0.805236, 2.59189e-08, 0.805236, -0.592955, -1, 0, -4.37114e-08, 95.6733, 15.8685, 0 )
 
 [node name="barril_oil7" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.04935e-08, -0.37658, 0.926384, -1.64608e-08, 0.926384, 0.37658, -1, 0, -4.37114e-08, 100.012, 13.4851, 0 )
+transform = Transform( -4.36799e-08, 0.0379867, 0.999278, 1.66045e-09, 0.999278, -0.0379867, -1, 0, -4.37114e-08, 123.713, 17.5632, 0 )
 
 [node name="barril_oil8" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37043e-08, 0.0179757, 0.999838, 7.85747e-10, 0.999838, -0.0179757, -1, 0, -4.37114e-08, 123.481, 8.45453, 0 )
+transform = Transform( -4.36799e-08, 0.0379867, 0.999278, 1.66045e-09, 0.999278, -0.0379867, -1, 0, -4.37114e-08, 154.217, 17.5632, 0 )
 
 [node name="barril_oil9" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37043e-08, 0.0179757, 0.999838, 7.85747e-10, 0.999838, -0.0179757, -1, 0, -4.37114e-08, 146.658, 14.1251, 0 )
-
-[node name="barril_oil10" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37043e-08, 0.0179757, 0.999838, 7.85747e-10, 0.999838, -0.0179757, -1, 0, -4.37114e-08, 159.074, 16.6347, 0 )
-
-[node name="barril_oil11" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37043e-08, 0.0179757, 0.999838, 7.85747e-10, 0.999838, -0.0179757, -1, 0, -4.37114e-08, 192.006, 10.4066, 0 )
+transform = Transform( -2.30599e-08, -0.849525, 0.527549, -3.71339e-08, 0.527549, 0.849525, -1, 0, -4.37114e-08, 193.041, 17.5632, 0 )
